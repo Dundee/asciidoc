@@ -1844,7 +1844,7 @@ class AttributeEntry:
         line = reader.read_next()
         if line:
             # Attribute entry formatted like :<name>[.<name2>]:[ <value>]
-            mo = re.match(AttributeEntry.pattern,line)
+            mo = re.match(str(AttributeEntry.pattern),line)
             if mo:
                 AttributeEntry.name = mo.group('attrname')
                 AttributeEntry.name2 = mo.group('attrname2')
@@ -1925,7 +1925,7 @@ class AttributeList:
         result = False  # Assume not next.
         line = reader.read_next()
         if line:
-            mo = re.match(AttributeList.pattern, line)
+            mo = re.match(str(AttributeList.pattern), line)
             if mo:
                 AttributeList.match = mo
                 result = True
